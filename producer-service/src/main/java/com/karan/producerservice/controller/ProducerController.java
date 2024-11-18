@@ -16,8 +16,10 @@ public class ProducerController {
         String message = "Hello from Producer! kida babeo";
         boolean send = streamBridge.send("producedEvent-out-0", message);
         if(send){
+            System.out.println("message sent : "+message);
             return "message sent : "+message;
         }else {
+            System.out.println("message not sent : "+message);
             return "message not sent";
         }
     }
